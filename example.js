@@ -19,7 +19,7 @@ app.use('/api/oembed', oembed(function(req, res, next) {
       256,  // width
       256); // height
       
-    // the helper automatically builds and send the response for you
+    // the helper automatically builds and sends the response for you
     // so there's nothing left to do here
   }
   else
