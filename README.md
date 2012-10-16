@@ -87,7 +87,7 @@ app.use("/path/to/api/oembed", oembed(function(req, res, next) {
 
 ## Note on JSONP
 
-Even though it's not specified by oembed.com, connect-oembed supports wrapping a JSON responses as a JSONP response. Just append a callback or jsonp parameter to the GET query and connect-oembed will respond accordingly. For example the following request would return a JSONP response:
+Even though it's not specified by oembed.com, connect-oembed supports wrapping a JSON response as a JSONP response. Just append a callback or jsonp parameter to the GET query and connect-oembed will respond accordingly. For example the following request would return a JSONP response:
 
 ``` js
 http://example.com/oembed?url=http%3A//example.com/images/1234?format=json?callback=mycallback
