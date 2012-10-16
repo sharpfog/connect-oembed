@@ -13,6 +13,10 @@
   },
   "engine": "node >= 0.6.6",
   "main" : "index",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/sharpfog/connect-oembed.git"
+  },
   "scripts": {
     "test": "nodeunit test"
   }
