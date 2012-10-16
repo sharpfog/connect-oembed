@@ -44,4 +44,51 @@ app.use('/oembed', oembed(function(req, res, next) {
 }));
 
 app.listen(8080);
-````
+``'
+
+## API
+
+After adding the connect-oembed middleware to your app, most interactions will be through the objects attached to the req and res objects. oEmbed request parameters (url, format, etc...) will be available via the req.oembed object (ie. req.oembed.url). To respond to an oEmbed request, use the helpers provided by the res.oembed object. The module will automatically respond in the correct format (JSON or XML) based on the request, choosing JSON if no format is specified. Any custom options passed to the helper will also be encoded into the json or xml response.
+
+``` js
+var oembed = require('connect-oembed');
+
+/**
+ * attach the connect-oembed middleware at the specified path
+ */
+app.use("/path/to/api/oembed", oembed(function(req, res, next) { 
+  ...
+
+  /**
+   * responds to an oEmbed request with a photo.
+   * all options will be encoded into the response.
+   */
+  res.oembed.photo(url, width, height, <options>);
+  
+  /**
+   * responds to an oEmbed request with a video.
+   * all options will be encoded into the response.
+   */
+  res.oembed.video(html, width, height, <options>);
+  
+  /**
+   * responds to an oEmbed request with a link (only takes options).
+   * all options will be encoded into the response.
+   */
+  res.oembed.link(<options>);
+  
+  /**
+   * responds to an oEmbed request with rich content.
+   * all options will be encoded into the response.
+   */
+  res.oembed.video(html, width, height, <options>);
+};
+```
+
+## Note on JSONP
+
+Even though it's not specified by oembed.com, connect-oembed supports wrapping a JSON responses as a JSONP response. Just append a callback or jsonp parameter to the GET query and connect-oembed will respond accordingly. For example the following request would return a JSONP response:
+
+``` js
+http://example.com/oembed?url=http%3A//example.com/images/1234?format=json?callback=mycallback
+```
