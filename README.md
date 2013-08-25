@@ -81,7 +81,7 @@ app.use("/path/to/api/oembed", oembed(function(req, res, next) {
    * responds to an oEmbed request with rich content.
    * all options will be encoded into the response.
    */
-  res.oembed.video(html, width, height, <options>);
+  res.oembed.rich(html, width, height, <options>);
 };
 ```
 
