@@ -2,7 +2,7 @@
   "name": "connect-oembed",
   "description": "oEmbed provider middleware for Node.js Connect and Express",
   "author": "sharpfog <me@sharpfog.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "dependencies": {
     "connect": "2.6.x",
