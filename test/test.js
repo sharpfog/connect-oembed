@@ -1,4 +1,4 @@
-var oembed = require('../lib/connect-oembed').connect;
+var oembed = require('../lib/connect-oembed');
 
 exports.setUp = function(callback) {
   var that = this;

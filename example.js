@@ -1,5 +1,5 @@
 var connect = require('connect');
-var oembed = require('./lib/connect-oembed').connect;
+var oembed = require('./lib/connect-oembed');
 
 var app = connect();
 
