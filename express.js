@@ -1,1 +1,1 @@
-module.exports.express = require('./lib/express-oembed');
+module.exports = require('./lib/express-oembed');
